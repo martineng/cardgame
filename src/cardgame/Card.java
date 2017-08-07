@@ -9,7 +9,7 @@ package cardgame;
  */
 public class Card
 {
-    private String name;
+    private String name, suit;
     private int rank;
     
     public Card()
@@ -17,9 +17,11 @@ public class Card
         // Null Constructor
     }
     
-    public Card(int inInput)
+    public Card(int inSuit, int inNum)
     {
-        switch (inInput)
+        setSuit(inSuit);
+        
+        switch (inNum)
         {
             case 1:
                 setName("1");
@@ -83,6 +85,27 @@ public class Card
         name = inName;
     }
     
+    public void setSuit(int inSuit)
+    {
+        switch (inSuit)
+        {
+            case 1:
+                suit = "Spade";
+                break;
+            case 2:
+                suit = "Heart";
+                break;
+            case 3:
+                suit = "Club";
+                break;
+            case 4:
+                suit = "Diamond";
+                break;
+            default:
+                break;
+        }
+    }
+    
     public void setRank(int inRank)
     {
         rank = inRank;
@@ -91,6 +114,11 @@ public class Card
     public String getName()
     {
         return name;
+    }
+    
+    public String getSuit()
+    {
+        return suit;
     }
     
     public int getRank()

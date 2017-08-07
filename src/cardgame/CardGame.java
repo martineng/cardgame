@@ -17,9 +17,11 @@ public class CardGame
      */
     public static void main(String[] args)
     {
-        testDeck();
+        //testDeck();
+        testStack();
     }
     
+    /*
     public static void testDeck()
     {
         Deck d1 = new Deck();
@@ -41,7 +43,7 @@ public class CardGame
             current = current.getNextLink();
         }
         
-    }
+    }*/
     
     // Generate Random Number
     public static int generateRandomNum()
@@ -55,4 +57,20 @@ public class CardGame
         return randNum + 1;
     } // END generateRandomNum()
     
+    public static void testStack()
+    {
+        Stack cardStack = new Stack();
+        cardStack.populateCard();
+        
+        Stack tempStack = cardStack;
+        
+        while (!tempStack.isEmpty())
+        {
+            System.out.println("Suit: " + tempStack.peek().getSuit());
+            System.out.println("Name: " + tempStack.peek().getName());
+            System.out.println("Rank: " + tempStack.peek().getRank());
+            
+            tempStack.pop();
+        }
+    }
 }

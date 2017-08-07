@@ -23,6 +23,7 @@ public class Deck
     {
         return first == null;
     }
+    /*
     
     // Insert into the firt of the link
     public void insertFirst(int inInput)
@@ -55,7 +56,7 @@ public class Deck
         
         last = newLink; // the last item is the new link
     } // END insertLast()
-    
+    */
     public void deleteFirst()
     {
         // IF there is only 1 item
