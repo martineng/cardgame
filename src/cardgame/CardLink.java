@@ -27,4 +27,9 @@ public class CardLink
         return nextLink;
     }
     
+    public Card getCard()
+    {
+        return theCard;
+    }
+    
 }

@@ -66,4 +66,14 @@ public class Deck
         
         first = first.getNextLink(); // The initial next item become the new first.
     } // END deleteFirst()
+    
+    public CardLink getFirst()
+    {
+        return first;
+    }
+    
+    public CardLink getLast()
+    {
+        return last;
+    }
 }
