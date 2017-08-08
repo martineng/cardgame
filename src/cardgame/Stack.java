@@ -63,6 +63,7 @@ public class Stack
             for (int row =0; row<12; row++)
             {
                 redundantCheck[col][row] = false;
+                //System.out.println(redundantCheck[col][row]);
             } // END FOR(row)
         } // END FOR(col)
         
@@ -72,27 +73,40 @@ public class Stack
             randomSuit = rand.nextInt(3);
             randomNum = rand.nextInt(12);
             
+            //System.out.println(redundantCheck[randomSuit][randomNum]);
             // IF card was drawn before
             if (redundantCheck[randomSuit][randomNum])
             {
+                System.out.println(counter + "--");
                 counter--; // Do it again
             }
             else
             {
                 redundantCheck[randomSuit][randomNum] = true;
           
-                tempCard = new Card(randomSuit, randomNum); // Generate Card
+                tempCard = new Card(randomSuit+1, randomNum+1); // Generate Card
+                push(tempCard);
+                System.out.println(counter + "++");
             } // END IF
-            
-            push(tempCard);
-      
+         
         } // END FOR
     } // END populateCard()
     
     // Placing card on top of the stack
     public void push(Card inCard)
     {
-        cardArray[++top] = inCard;
+        if (!(isFull()))
+        {
+            System.out.println(top);
+            System.out.println("Pushed " + inCard.getSuit() + ", " + inCard.getName());
+            cardArray[++top] = inCard;
+            System.out.println(top + "\n");
+        }
+        else
+        {
+            System.out.print("STACK FULL!");
+        }
+        
     } // END push()
     
     // Remove the top card
